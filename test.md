@@ -1,3 +1,7 @@
+---
+layout: post
+title: testing
+---
 ### Hi There
 
 So this is a paragraph?
