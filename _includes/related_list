@@ -1,0 +1,7 @@
+{% if site.related_posts %}
+<ul>
+{% for node in site.related_posts %}
+    <li><a href="{{node.url}}">{{node.title}}</a></li>
+{% endfor %}
+</ul>
+{% endif %}

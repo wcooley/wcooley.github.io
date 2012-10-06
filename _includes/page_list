@@ -1,0 +1,5 @@
+{% if site.posts %}
+<ul class="page_list">{% for node in site.posts %}
+    <li class="page_list"><a href="{{node.url}}">{{node.title}}</a></li>
+{% endfor %}</ul>
+{% endif %}
