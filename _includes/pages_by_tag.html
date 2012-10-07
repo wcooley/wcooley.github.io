@@ -1,0 +1,13 @@
+{% if site.tags %}
+<ul class="tags_list">
+{% for tag in site.tags %}
+<li>{{ tag | first }}
+<ul class="pages_in_tag_{{ tag | first | downcase | join: '_' }}_list">
+{% for post in tag.last %}
+<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+</li>
+{% endfor %}
+</ul>
+{% endif %}

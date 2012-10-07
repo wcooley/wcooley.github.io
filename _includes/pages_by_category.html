@@ -1,0 +1,15 @@
+{% if site.categories %}
+<ul class="categories_list">
+{% for cat in site.categories %}
+<li>{{ cat | first }}:
+<ul class="pages_in_category_{{ cat | first | downcase |join: '_' }}_list">
+{% for post in cat.last %}
+<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% comment %}
+vim:ft=html
+{% endcomment %}

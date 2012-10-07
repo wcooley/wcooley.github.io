@@ -1,0 +1,9 @@
+{% if page.category %}
+<h1>{{ page.category | capitalize }}</h1>
+<h2>{{ page.title }}</h2>
+{% elsif page.title %}
+<h1>{{ page.title }}</h1>
+{{ page.title }}
+{% else %}
+Untitled Page
+{% endif %}
