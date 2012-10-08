@@ -12,7 +12,7 @@ writing the table back out again. One of the interesting but less
 broadly-applicable bits of that article is keeping track of open connections
 and removing them when a close event is logged.
 
-{% highlight console linenos %}
+{% highlight bash linenos %}
     eventtype=sendmail_message_sent OR eventtype=postfix_message_sent
     | eval recip_domain=lower(recip_domain)
     | eval relay_name=lower(relay_name)
