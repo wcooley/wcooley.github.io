@@ -22,8 +22,10 @@
          </header>
 
         <section id="sidebar">
+        {% if site.related %}
         Related:
           {% include related_list.html %}
+        {% endif %}
         </section>
 
         <hr>
