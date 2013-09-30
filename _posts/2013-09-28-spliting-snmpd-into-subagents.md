@@ -4,7 +4,6 @@ tags: snmp agentx
 category: snmp
 title: Splitting `snmpd` into AgentX Subagents
 ---
-
 Background
 ----------
 
@@ -25,11 +24,11 @@ Baseline
 To get started, ensure `snmpd.conf` has at least one `disk` directive, restart
 `snmpd`, and view the `dskTable`:
 
-```
+```sh
 $ snmptable -Of localhost dskTable
 SNMP table: .iso.org.dod.internet.private.enterprises.ucdavis.dskTable
 
- dskIndex dskPath dskDevice dskMinimum dskMinPercent dskTotal dskAvail dskUsed dskPercent dskPercentNode dskTotalLow dskTotalHigh dskAvailLow dskAvailHigh dskUsedLow dskUsedHigh dskErrorFlag dskErrorMsg
+dskIndex dskPath dskDevice dskMinimum dskMinPercent dskTotal dskAvail dskUsed dskPercent dskPercentNode dskTotalLow dskTotalHigh dskAvailLow dskAvailHigh dskUsedLow dskUsedHigh dskErrorFlag dskErrorMsg
         1       / /dev/sda3      10000            -1  7611636   206856 7018052         97             17     7611636            0      206820            0    7018052           0            0
 ```
 
@@ -38,21 +37,24 @@ Setting up the master
 
 First of all, the AgentX needs to be enabled in the master. Add to `snmpd.conf`:
 
+
 ```
 master agentx
 ```
+
 
 Then, the command-line for the master `snmpd` needs to be changed to disable
 loading the modules. On RHEL5 for example, edit `/etc/sysconfig/snmpd.options`
 and add `-I -disk,diskio` to `OPTIONS` and restart:
 
-```
+
+```sh
 OPTIONS="-Lsd -Lf /dev/null -p /var/run/snmpd.pid -a -I -disk,diskio"
 ```
 
 Now to check we've turned it off:
 
-```
+```sh
 $ snmptable -Of localhost dskTable
 .iso.org.dod.internet.private.enterprises.ucdavis.dskTable: No entries
 ```
@@ -64,19 +66,19 @@ Now to start the AgentX subagent, add `-X` to run as an AgentX subprocess and
 load the modules that had been disabled in the master with nearly the same `-I`
 option: `-I disk,diskio`.
 
-To confirm that it's working, we will run keep `snmpd` attached to the terminal
+To confirm that it is working, we will run keep `snmpd` attached to the terminal
 with `-f` and symbolically print SNMP transactions with `-V`:
 
-```
-# snmpd -V -f -Le -Lf /dev/null -p /var/run/snmpdiskd.pid -a -X -I disk,diskio
+```sh
+  snmpd -V -f -Le -Lf /dev/null -p /var/run/snmpdiskd.pid -a -X -I disk,diskio
 ```
 
 Now let's look at the table (on a different terminal, of course):
 
-```
+```sh
 $ snmptable -Of localhost dskTable
 SNMP table: .iso.org.dod.internet.private.enterprises.ucdavis.dskTable
-
+ 
  dskIndex dskPath dskDevice dskMinimum dskMinPercent dskTotal dskAvail dskUsed dskPercent dskPercentNode dskTotalLow dskTotalHigh dskAvailLow dskAvailHigh dskUsedLow dskUsedHigh dskErrorFlag dskErrorMsg
         1       / /dev/sda3      10000            -1  7611636   206856 7018052         97             17     7611636            0      206820            0    7018052           0            0
 ```
@@ -107,7 +109,7 @@ Before we break the subagent, however, let's first walk the *ucdavis* subtree
 and confirm that both our disk-related information and the other information
 appear together as expected:
 
-```
+```sh
 $ snmpwalk -Of localhost ucdavis |less
 .iso.org.dod.internet.private.enterprises.ucdavis.memory.memIndex.0 = INTEGER: 0
 …
@@ -122,7 +124,7 @@ $ snmpwalk -Of localhost ucdavis |less
 
 And let's check getting a particular entry:
 
-```
+```sh
 $ snmpget -Of localhost ucdavis.dskTable.dskEntry.dskPath.1
 .iso.org.dod.internet.private.enterprises.ucdavis.dskTable.dskEntry.dskPath.1 = STRING: /
 ```
@@ -171,7 +173,7 @@ master. The solution is to move the `disk` directives to a new config file
 name with `-n`, which causes `snmpd` to look for `snmpdiskd.conf` in the 8 or
 so places it looks for configuration files (see snmp_config(5) for details):
 
-```
+```sh
 # snmpd -n snmpdiskd -V -f -Le -Lf /dev/null -p /var/run/snmpdiskd.pid -a -X -I disk,d
 ```
 
