@@ -1,4 +1,10 @@
-[[TableOfContents]]
+---
+layout: default
+tags: shell
+category: shell_hacks
+title: Shell Hacks
+---
+# Shell Hacks
 
 = Shell Hacks =
 
