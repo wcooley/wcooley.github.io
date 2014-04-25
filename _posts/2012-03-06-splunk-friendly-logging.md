@@ -18,9 +18,9 @@ with the same name as the built-in fields, such as **host** or **source**.
 names of hosts, for example.  Depending on the situation, **client** or
 **clientip** might be a good choice.
 
-* If **value** has no whitespace or the following delimiters: "``` , ;
-$ |```" then it can be used as-is. Using other punctuation seems to
-be ok and does not result in the value being split at the character.
+* If **value** has neither whitespace nor any of the following delimiters: ```
+ , ; $ |``` then it can be used as-is. Using other punctuation seems to be ok and
+does not result in the value being split at the character.
 
 * If there any of the characters mentioned in the previous, enclose them in
 **double** quotes. Enclosing them in double quotes results in a field value
