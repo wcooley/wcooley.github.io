@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Automate some of the conversion from MoinMoin to Markdown
+
+case "$OSTYPE" in
+    darwin*)
+        SED_EX_REGEX="-E"
+        ;;
+    *gnu)
+        SED_EX_REGEX="-r"
+        ;;
+esac
+
+sed -i '' $SED_EX_REGEX -e '
+s/[{}]{3}/```/g
+s/ *[=]+$//g
+s/^[=]{5} /##### /
+s/^[=]{4} /#### /
+s/^[=]{3} /### /
+s/^[=]{2} /## /
+s/^[=] /# /
+' "$@"
