@@ -11,12 +11,6 @@ case "$OSTYPE" in
         ;;
 esac
 
-sed -i '' $SED_EX_REGEX -e '
-s/[{}]{3}/```/g
-s/ *[=]+$//g
-s/^[=]{5} /##### /
-s/^[=]{4} /#### /
-s/^[=]{3} /### /
-s/^[=]{2} /## /
-s/^[=] /# /
-' "$@"
+dirname="${0%/*}"
+
+sed -i '' $SED_EX_REGEX -f $dirname/moin-to-md.sed "$@"
