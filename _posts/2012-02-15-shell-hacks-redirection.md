@@ -1,7 +1,7 @@
 ---
 layout: default
 tags: shell
-category: shell_hacks
+category: "shell hacks"
 title: "Shell Hacks: Redirection"
 ---
 Shell Hacks: Redirection

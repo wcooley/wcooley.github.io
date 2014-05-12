@@ -1,7 +1,7 @@
 ---
 layout: default
 tags: shell
-category: shell_hacks
+category: "shell hacks"
 title: "Shell Hacks: Displaying Tables"
 ---
 Shell Hacks: Displaying Tables

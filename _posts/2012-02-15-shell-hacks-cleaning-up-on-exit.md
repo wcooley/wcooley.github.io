@@ -1,7 +1,7 @@
 ---
 layout: default
 tags: shell
-category: shell_hacks
+category: "shell hacks"
 title: "Shell Hacks: Cleaning Up on Exit"
 ---
 Shell Hacks: Cleaning Up on Exit
