@@ -2,9 +2,9 @@
 layout: default
 tags: shell
 category: "shell hacks"
-title: "Shell Hacks: Joining Line-Delimited Data"
+title: "Joining Line-Delimited Data"
 ---
-Shell Hacks: Joining Line-Delimited Data
+Joining Line-Delimited Data
 ========================================
 
 The Perl **join** function is nice, because you can join a list to create a

@@ -2,9 +2,9 @@
 layout: default
 tags: shell
 category: "shell hacks"
-title: "Shell Hacks: Batch Processing"
+title: "Batch Processing"
 ---
-Shell Hacks: Batch Processing
+Batch Processing
 =============================
 
 If you've ever wanted to run a number of jobs at the same time, but had too

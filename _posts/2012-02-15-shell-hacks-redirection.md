@@ -2,9 +2,9 @@
 layout: default
 tags: shell
 category: "shell hacks"
-title: "Shell Hacks: Redirection"
+title: "Redirection"
 ---
-Shell Hacks: Redirection
+Redirection
 ========================
 
 Redirecting I/O Script-wide

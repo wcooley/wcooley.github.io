@@ -2,9 +2,9 @@
 layout: default
 tags: shell
 category: "shell hacks"
-title: "Shell Hacks: Cleaning Up on Exit"
+title: "Cleaning Up on Exit"
 ---
-Shell Hacks: Cleaning Up on Exit
+Cleaning Up on Exit
 ================================
 
 You can automatically clean up on exit using the "```trap```" built-in command.

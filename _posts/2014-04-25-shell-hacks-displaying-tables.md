@@ -2,9 +2,9 @@
 layout: default
 tags: shell
 category: "shell hacks"
-title: "Shell Hacks: Displaying Tables"
+title: "Displaying Tables"
 ---
-Shell Hacks: Displaying Tables
+Displaying Tables
 ==============================
 
 Previously I used `awk` when I had data in a tabular format that I wanted to print in aligned columns:
