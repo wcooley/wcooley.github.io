@@ -3,6 +3,6 @@ description: Blog & notes
 url:        https://wcooley.github.io
 safe:       true
 lsi:        false
-pygments:   true
+highlighter: pygments
 permalink:  none
 markdown:   redcarpet
