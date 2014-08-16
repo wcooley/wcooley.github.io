@@ -1,47 +1,48 @@
-notice: Scope(Class[main]): * Checking for truthiness in ERB *
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): @fednu is not truthy
-notice: Scope(Class[main]): @eslaf is not truthy
-warning: Scope(Class[main]): @lambda is truthy
-warning: Scope(Class[main]): @empty_array is truthy
-warning: Scope(Class[main]): @hiera_undef is truthy
-notice: Scope(Class[main]): @no_such_var is not truthy
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): * Checking for truthiness in Puppet lang *
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): $fednu is not truthy
-notice: Scope(Class[main]): $eslaf is not truthy
-notice: Scope(Class[main]): $lambda is not truthy
-notice: Scope(Class[main]): $empty_array is truthy
-notice: Scope(Class[main]): $hiera_undef is not truthy
-notice: Scope(Class[main]): $no_such_var is not truthy
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): * Checking for nil *
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): @fednu is nil
-notice: Scope(Class[main]): @eslaf is not nil
-notice: Scope(Class[main]): @lambda is not nil
-notice: Scope(Class[main]): @empty_array is not nil
-notice: Scope(Class[main]): @hiera_undef is not nil
-notice: Scope(Class[main]): @no_such_var is nil
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): * Checking rendering in ERB *
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): @fednu is ''
-notice: Scope(Class[main]): @eslaf is 'false'
-notice: Scope(Class[main]): @lambda is ''
-notice: Scope(Class[main]): @empty_array is '[]'
-notice: Scope(Class[main]): @hiera_undef is ''
-notice: Scope(Class[main]): @no_such_var is ''
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): * Checking rendering in Puppet lang *
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): $fednu is ''
-notice: Scope(Class[main]): $eslaf is 'false'
-notice: Scope(Class[main]): $lambda is ''
-notice: Scope(Class[main]): $empty_array is ''
-notice: Scope(Class[main]): $hiera_undef is ''
-notice: Scope(Class[main]): $no_such_var is ''
-notice: Scope(Class[main]): 
-notice: Scope(Class[main]): DONE
-notice: Finished catalog run in 0.07 seconds
+Notice: Scope(Class[main]): * Checking for truthiness in ERB *
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): @fednu is not truthy
+Notice: Scope(Class[main]): @eslaf is not truthy
+Notice: Scope(Class[main]): @lambda is truthy
+Notice: Scope(Class[main]): @empty_array is truthy
+Notice: Scope(Class[main]): @hiera_undef is truthy
+Notice: Scope(Class[main]): @no_such_var is not truthy
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): * Checking for truthiness in Puppet lang *
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): $fednu is not truthy
+Notice: Scope(Class[main]): $eslaf is not truthy
+Notice: Scope(Class[main]): $lambda is not truthy
+Notice: Scope(Class[main]): $empty_array is truthy
+Notice: Scope(Class[main]): $hiera_undef is not truthy
+Notice: Scope(Class[main]): $no_such_var is not truthy
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): * Checking for nil *
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): @fednu is nil
+Notice: Scope(Class[main]): @eslaf is not nil
+Notice: Scope(Class[main]): @lambda is not nil
+Notice: Scope(Class[main]): @empty_array is not nil
+Notice: Scope(Class[main]): @hiera_undef is not nil
+Notice: Scope(Class[main]): @no_such_var is nil
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): * Checking rendering in ERB *
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): @fednu is ''
+Notice: Scope(Class[main]): @eslaf is 'false'
+Notice: Scope(Class[main]): @lambda is ''
+Notice: Scope(Class[main]): @empty_array is '[]'
+Notice: Scope(Class[main]): @hiera_undef is ''
+Notice: Scope(Class[main]): @no_such_var is ''
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): * Checking rendering in Puppet lang *
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): $fednu is ''
+Notice: Scope(Class[main]): $eslaf is 'false'
+Notice: Scope(Class[main]): $lambda is ''
+Notice: Scope(Class[main]): $empty_array is ''
+Notice: Scope(Class[main]): $hiera_undef is ''
+Notice: Scope(Class[main]): $no_such_var is ''
+Notice: Scope(Class[main]): 
+Notice: Scope(Class[main]): DONE
+Notice: Compiled catalog for coolair.oit.pdx.edu in environment production in 0.07 seconds
+Notice: Finished catalog run in 0.05 seconds
