@@ -56,9 +56,10 @@ body {
   color: #303030;
 }
 
-a {
-  color: #d5000d;
+a:link {
+  color: #000077;
 }
+
 a:hover {
   color: #c5000c;
 }
