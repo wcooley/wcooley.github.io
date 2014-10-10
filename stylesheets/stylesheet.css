@@ -60,7 +60,7 @@ a:link {
   color: #000077;
 }
 
-a:hover {
+a:hover, a:focus {
   background-color: #f2f2f2;
 }
 
