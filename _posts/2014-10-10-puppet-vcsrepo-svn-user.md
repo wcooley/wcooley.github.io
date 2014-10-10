@@ -94,3 +94,14 @@ Repository Root: svn+ssh://<svn_host>/<repo_path>
 $ svn switch --relocate 'svn+ssh://<svn_host>/<repo_path>' \
         'svn+ssh_user_<remote_user>://<svn_host>/<repo_path>'
 ```
+
+Future
+------
+
+It would be nice if `vcsrepo` could support `user` directly and could use
+`identity`. I considered submitting a patch to do so, but it seems better to
+use the [Puppet execution
+API](https://github.com/puppetlabs/puppetlabs-vcsrepo/pull/200) but it does
+not support changing UIDs in Puppet 2.7 (which I lament to say I am currently
+still using). (Not to mention that this is the kind of thing that would be
+difficult to test.)
