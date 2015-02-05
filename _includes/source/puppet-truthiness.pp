@@ -5,6 +5,8 @@ $empty_array = []
 $hiera_undef = hiera('nevergonnagiveyouup', undef)
 #$no_such_var
 
+notice("* Versions: Puppet ${puppetversion}, Hiera: ${hieraversion}, Facter: ${facterversion}")
+notice("")
 notice("* Checking for truthiness in ERB *")
 notice("")
 notice(inline_template("<%= if @fednu; '@fednu is truthy'; else '@fednu is not truthy'; end %>"))
