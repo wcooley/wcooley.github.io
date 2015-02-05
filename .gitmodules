@@ -1,0 +1,3 @@
+[submodule "Computer-Modern"]
+	path = Computer-Modern
+	url = https://github.com/spratt/Computer-Modern.git
