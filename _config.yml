@@ -20,3 +20,13 @@ incremental:    false
 highlighter:    rouge
 gist:
     noscript: false
+
+# Frontmatter defaults
+defaults:
+    -
+        scope:
+            path: ""    # All files
+            type: posts
+        values:
+            layout: default
+            author: "Wil Cooley"
