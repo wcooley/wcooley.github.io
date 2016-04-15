@@ -1,8 +1,22 @@
 name:       Wil Cooley's Little Piece of Heaven
 description: Blog & notes
 url:        https://wcooley.github.io
+permalink:  none
+
+# https://help.github.com/articles/configuring-jekyll/
+## Defaults set by GHP that can be changed:
+github: [metadata]
+kramdown:
+    input: GFM
+    hard_wrap: false
+gems:
+    - jekyll-coffeescript
+    - jekyll-paginate
+
+# Defaults set by GHP that cannot be changed:
 safe:       true
 lsi:        false
-highlighter: pygments
-permalink:  none
-markdown:   redcarpet
+incremental:    false
+highlighter:    rouge
+gist:
+    noscript: false
