@@ -31,7 +31,7 @@ Feel free to add to this list or fix mistakes.
 ### Finding the Size of a Physical Volume
 
 You can determine the size of a physical volume without first importing it into
-a volume group with the undocumented ```bootinfo``` command:
+a volume group with the undocumented `bootinfo` command:
 
 ```
 # bootinfo -s <disk>
@@ -114,15 +114,15 @@ CuAt:
 ```
 
 The entries with ''attribute = "route"'' are static routing table entries added
-automatically at boot.  Routes can be deleted using the ''```chdev```'' command
-or by manipulating the ODM directly.    Using ''```chdev```'':
+automatically at boot.  Routes can be deleted using the ''`chdev`'' command
+or by manipulating the ODM directly.    Using ''`chdev`'':
 
 ```
 # chdev -l inet0 -a delroute=net,-hopcount,0,-netmask,255.255.255.0,,,10.11.12.0,192.168.10.2
 ```
 
 To delete an entry using the ODM, it must be identified by it's ''value'' seen
-in the ''```odmget```'' command above:
+in the ''`odmget`'' command above:
 
 ```
 # odmdelete -o CuAt -q "name=inet0 and value=net,-hopcount,0,-netmask,255.255.255.0,,,10.11.12.0,192.168.10.2"
@@ -145,21 +145,21 @@ See PackageManagerCheatsheet
 OS Update
 ---------
 
-The "```oslevel```" command can be used to determine what filesets need to be
+The "`oslevel`" command can be used to determine what filesets need to be
 installed to bring a system to a given technology level or service pack.  This
 information is from the ''bos.rte.install'' fileset, although I have never
 actually find where it is listed; it may be in the binary itself.  The
-'''```-g```''' option shows filesets '''newer''' than the requested level and
-the '''```-l```''' shows filesets that are '''older'''.  To determine what is
+'''`-g`''' option shows filesets '''newer''' than the requested level and
+the '''`-l`''' shows filesets that are '''older'''.  To determine what is
 needed to upgrade from one technology level to another, use the '''-r''' option
 and the 6-digit technology level.  
 
-For a service pack, use the '''```-s```''' and the 8-digit service pack level.
+For a service pack, use the '''`-s`''' and the 8-digit service pack level.
 
 First, install the current ''bos.rte.install'' for the level you want to
-upgrade to.  If your system is behind at the technology level, use "```oslevel
--rl 5300-0X```" to show you what updates are required.  Similarly, if your
-system requires service pack updates, use "```oslevel -sl 5300-0X-0Y```".
+upgrade to.  If your system is behind at the technology level, use "`oslevel
+-rl 5300-0X`" to show you what updates are required.  Similarly, if your
+system requires service pack updates, use "`oslevel -sl 5300-0X-0Y`".
 
 Here's an example from one of my recent upgrades, going from 5300-05-04 to
 5300-05-05.  First, check the current service pack level:
@@ -218,7 +218,7 @@ ODM
 ### ODM Object Classes
 
 Ever wondered what all of those file names are you have to use with
-"```odmget```"?  Here's a table from [Technical Reference: Kernel and
+"`odmget`"?  Here's a table from [Technical Reference: Kernel and
 Subsystems, Volume 2][2]:
 
 ```
@@ -243,7 +243,7 @@ General
 AIX has a global hard limit on the number of processes an individual user may
 have, which can cause mysterious "fork: Resource temporarily unavailable"
 message when a user it.  The limit even applies to root.  You can find out what
-your limit is set to with "```lsattr```":
+your limit is set to with "`lsattr`":
 
 ```
 $ lsattr -HEl sys0 -a maxuproc
@@ -252,7 +252,7 @@ attribute value description                                  user_settable
 maxuproc  128   Maximum number of PROCESSES allowed per user True
 ```
 
-It can then be changed with "```chdev```":
+It can then be changed with "`chdev`":
 
 ```
 # chdev -l sys0 -a maxuproc=200

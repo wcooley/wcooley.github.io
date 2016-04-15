@@ -15,7 +15,7 @@ work but I only rarely use it and I don't test in it.
 
 ## Listing Non-System Users
 
-```awk``` is a word-splitter.  ```/etc/passwd``` is a colon-delimited list of
+`awk` is a word-splitter.  `/etc/passwd` is a colon-delimited list of
 words.  Ergo:
 
 ```
@@ -24,14 +24,14 @@ $ awk -F: '{if ($3 >= 500) { print $1 }}' /etc/passwd
 
 Replace **500** with the beginning UID for non-system users for your system.
 Red Hat uses 500; Solaris uses 1000.  If you're using NIS, LDAP, or other
-NameServiceSwitch back-end, use the ```getent``` command (which, conveniently
-outputs the same format as ```/etc/passwd```):
+NameServiceSwitch back-end, use the `getent` command (which, conveniently
+outputs the same format as `/etc/passwd`):
 
 ```
 getent passwd | awk -F: '{if ($3 >= 500) {print $1}}'
 ```
 
-Neither of these commands will work on AIX, but on AIX you've got ```lsusers```
+Neither of these commands will work on AIX, but on AIX you've got `lsusers`
 already.  Note that you can also list only the system users by reversing the
 comparison operator.  You will likely have a user **nfsnobody** that is UID
 65534 (which corresponds to -1 in signed 16-bit integers) which is also a
@@ -56,7 +56,7 @@ alias nocomment="sed -e 's/\([^#]*\)#.*$/\1/; /^[[:space:]]*$/d; /^#/d;'"
 
 ## Find Empty Directories
 
-This is the magic for ```find``` that finds empty directories in the current
+This is the magic for `find` that finds empty directories in the current
 working directory.
 
 ```
@@ -76,12 +76,14 @@ awk '{print $3}' <logfile> |awk -F: '{print $1 ":00"}' |sort -n |uniq -c
 
 ## Getting the Script Name
 
-I used to use ```prog=$(basename $0)``` to get the script's basename (which is
+I used to use `prog=$(basename $0)` to get the script's basename (which is
 good for help output, temp files, etc).  However, I've picked up a tip from
 SUSE's init scripts which uses the parameter expansion available in bash and
 ksh:
 
-```prog=${0##*/} ```
+```
+prog=${0##*/}
+```
 
 It's a little more succinct (if perhaps obscure) and obviates an exec.
 
@@ -104,7 +106,6 @@ usage() {
 
     exit "$exitval"
 }
-
 ```
 
 ## Generate Sequence of Integers without Using 'seq'
@@ -152,9 +153,9 @@ $ for p in ${PATH//:/ }; do echo $p; done
 
 ### Improved pathmunge
 
-Red Hat's ```/etc/profile``` defines a shell function called ```pathmunge``` to
-conditionally add directories to ```$PATH``` The problem with this
-implementation is that it runs ```egrep```, which involves forking a process
+Red Hat's `/etc/profile` defines a shell function called `pathmunge` to
+conditionally add directories to `$PATH` The problem with this
+implementation is that it runs `egrep`, which involves forking a process
 and incurs a modicum of overhead. Generally that's not a big deal--the overhead
 is minimal on modern processors. But if the host is in a state of distress due
 to swapping or a fork-bomb or such, these extra processes become a burdensome
