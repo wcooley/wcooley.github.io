@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: snmp agentx
 category: snmp
 title: Splitting `snmpd` into AgentX Subagents

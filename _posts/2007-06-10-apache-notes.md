@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: apache
 category: application
 title: "Application Notes: Apache httpd"

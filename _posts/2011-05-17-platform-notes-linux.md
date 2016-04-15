@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: platform linux
 category: platform
 title: "Platform Notes: Linux"

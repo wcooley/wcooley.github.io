@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: authentication
 category: Security
 title: "Authenication Notes"

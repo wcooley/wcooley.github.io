@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: shell
 category: "shell hacks"
 title: "Cleaning Up on Exit"

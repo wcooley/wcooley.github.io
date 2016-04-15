@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: puppet erb ruby
 category: puppet
 title: "Puppet: Truthiness in ERB Templates"

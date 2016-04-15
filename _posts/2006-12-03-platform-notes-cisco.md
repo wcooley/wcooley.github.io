@@ -1,5 +1,4 @@
 ---
-layout: default
 category: platform
 tags: platform cisco
 title: "Platform Notes: Cisco"

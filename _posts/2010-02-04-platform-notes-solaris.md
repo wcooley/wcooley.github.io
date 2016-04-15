@@ -1,5 +1,4 @@
 ---
-layout: default
 category: platform
 tags: platform solaris
 title: "Platform Notes: Solaris"

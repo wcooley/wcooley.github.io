@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: puppet vcsrepo svn
 category: puppet
 title: "Managing Subversion w/vcsrepo with Non-root Remote Users"

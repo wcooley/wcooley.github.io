@@ -2,7 +2,6 @@
 title: Keeping Rolling State
 category: splunk
 tags: splunk state inputlookup outputlookup
-layout: default
 ---
 Having been inspired by the Splunk blog post [Maintaining State of the
 Union][splunk_state], I have been following this pattern of running frequent

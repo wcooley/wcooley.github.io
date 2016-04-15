@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: platform wispdist soekris
 category: platform
 title: "WISP-Dist on Soekris"

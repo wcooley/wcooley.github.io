@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: splunk
 category: splunk
 title: Splunk-Friendly Logging

@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: git ssh git-shell
 category: git
 title: Using git-shell within SSH authorized_keys

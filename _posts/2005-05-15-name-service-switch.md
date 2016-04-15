@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: naming directory
 category: platform
 title: Name Service Switch (NSS)

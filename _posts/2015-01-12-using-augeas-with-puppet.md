@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: puppet augeas
 category: puppet
 title: "Using Augeas with Puppet"

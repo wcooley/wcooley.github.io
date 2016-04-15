@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: aix
 category: platform
 title: "Platform Notes: AIX"

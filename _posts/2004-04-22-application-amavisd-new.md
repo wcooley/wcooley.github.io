@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: application
 category: application
 title: "Application Notes: amavisd-new"

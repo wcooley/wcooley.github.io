@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: shell
 category: "shell hacks"
 title: "Joining Line-Delimited Data"

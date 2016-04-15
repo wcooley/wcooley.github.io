@@ -1,5 +1,4 @@
 ---
-layout: default
 tags: splunk
 category: splunk
 title: Picking top fields for reporting
