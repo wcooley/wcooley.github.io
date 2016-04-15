@@ -69,17 +69,19 @@ Or in one step:
 ```
 pkgadd -d <pkgfile>
 ```
+
 ### Spool-install
 
 This method is useful for installing into an NFS export, for easy installation
 on other systems.
 
-1. Install the package into `/var/spool/pkg`:
+1.  Install the package into `/var/spool/pkg`:
 
     ```
     pkgadd -s /var/spool/pkg -d <pkgfile>
     ```
-1. Install the package from the listing:
+
+1.  Install the package from the listing and follow prompts:
 
     ```
     pkgadd

@@ -56,16 +56,16 @@ $banned_filename_re = new_RE(
   matched.
 * A group of things to match any one of is done with:
 
-    ```
-    (foo|bar|baz)
-    ```
+  ```
+  (foo|bar|baz)
+  ```
 
 * If you want to add 'bat' to the group to match, it would be something like
  this, although you don't have to put it at the end:
 
-    ```
-    (foo|bar|baz|bat)
-    ```
+  ```
+  (foo|bar|baz|bat)
+  ```
 
 * A dot `.` matches any single character; to match only a dot, escape it with a
 backslash: `\.`.
@@ -80,6 +80,6 @@ matches **one** character without a count qualification.
 be a comma-delimited range such as `{0,3}` or a single number `{2}`.  For
 example, the following matches 1 or 2 combinations of *A* or *B*:
 
-    ```
-    [AB]{1,2}
-    ```
+  ```
+  [AB]{1,2}
+  ```

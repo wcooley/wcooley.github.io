@@ -38,9 +38,9 @@ field; however, it is easy to use the [***makemv***][1] command to do so. For
 example, given data like **list="one,two,three"**, the following will results
 in three **list** fields:
 
- ```
- list="one,two,three" | makemv delim="," list
- ```
+  ```
+  list="one,two,three" | makemv delim="," list
+  ```
 
 * Splunk has a document about the **Common Information Model**; it is perhaps
 more detailed than necessary, but you get the idea: [Understand and use the
