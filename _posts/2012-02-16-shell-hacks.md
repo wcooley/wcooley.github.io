@@ -68,7 +68,7 @@ find . -empty -maxdepth 1 -type d
 
 This extracts the hour from the syslog timestamps and shows how many log
 entries occured in each hour.  This is most useful if you pre-process
-<logfile>, or you remove log file and feed it with a pipe.
+\<logfile\>, or you remove log file and feed it with a pipe.
 
 ```
 awk '{print $3}' <logfile> |awk -F: '{print $1 ":00"}' |sort -n |uniq -c
