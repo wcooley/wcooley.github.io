@@ -48,4 +48,6 @@ def test_uuid_pattern_fixture(testdir):
 Note that I have expressly disabled the _pytest-sugar_ plugin; because it
 changes the test report output, it messes up this test. It seems like it
 should be able to detect situations like this and disable itself but it does
-not. If _pytest-sugar_ is not used, this can be elided.
+not. If _pytest-sugar_ is not used, this can be elided. (A better solution
+might be to examine a structured report of the test run, such as the JUnit XML
+or `--report-log=xxx`, or perhaps use _RunResult.assert\_outcomes_).
