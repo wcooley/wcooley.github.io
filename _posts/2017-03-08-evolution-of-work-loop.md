@@ -8,7 +8,6 @@ I have a number of agents that poll for work, sleep and then repeat. They are
 structured something like this:
 
 ```python
-
 class Agent:
     def run_once(self):
         """Do all the work for a single iteration."""
@@ -17,7 +16,6 @@ class Agent:
         while True:
             self.run_once()
             time.sleep(self.interval)
-
 ```
 
 I like to have a command-line option to run through a single iteration and
@@ -25,7 +23,6 @@ stop. This is handy for testing, catching up after scheduled downtime, etc.
 My first attempt went something like this:
 
 ```python
-
 class Agent:
     ...
     def run(self):
@@ -57,13 +54,12 @@ Now `run` and `run_loop` look like this, without the need for an intermediate
 function:
 
 ```python
-
 class Agent:
     ...
 
     def run(self):
         args = sef.parse_arguments(sys.argv)
-        self.run(run_only_once=args.run_once)
+        self.run_loop(run_only_once=args.run_once)
 
     def run_loop(self, run_only_once=None):
         once_or_delay = (0, 1) if run_only_once else (self.interval,)
@@ -77,9 +73,9 @@ That's pretty good -- our arguments for `repeat` in the "run only once" case
 are 0 delay (sleep) and repeat once; for the "run endlessly" case they are the
 delay interval and nothing, which means repeat infinitely.
 
-(There is difference in sleeping for 0 seconds and not calling sleep at all,
-in terms of process scheduling, for the distinction is not important for this
-case.)
+(There is a difference in sleeping for 0 seconds and not calling sleep at all,
+in terms of process scheduling with the operating system, but the distinction
+is not important for this case.)
 
 The tuple arguments of `repeat` are not particuarly obvious or
 self-documenting; using keyword arguments would be better for that. So for our final revision, let's instead make a `dict`:
