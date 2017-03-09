@@ -97,3 +97,29 @@ This, I believe, is nearly as concise as the previous version, but the meaning
 of the values is more obvious. Compared with the first version, the call to
 `run_once` happens in only one place, so there are fewer branches to test and
 understand.
+
+Putting it all together, the code ends up looking something like this:
+
+```python
+class Agent:
+    ...
+    def run(self):
+        """Initialize agent and start work loop."""
+        args = sef.parse_arguments(sys.argv)
+        self.run_loop(run_only_once=args.run_once)
+
+    def run_loop(self, run_only_once=None):
+        """Run infinitely, handle errors, delay between runs."""
+        once_or_delay = {'object': 0, 'times': 1} if run_only_once \
+            else {'object': self.interval, 'times': None}
+
+        for delay in repeat(**once_or_delay):
+            try:
+                self.run_once()
+            except:  # More specific exception handling goes here
+                log.exception(...)
+            time.sleep(delay)
+
+    def run_once(self):
+        """Do all the work for a single iteration."""
+```
