@@ -11,7 +11,7 @@ nicer.  First, I had to adjust the Apache configuration itself to look for my
 custom header and disable the generated HTML preamble.  Settings like this were
 necessary:
 
-```
+```apache
 AddType text/html .cgi
 AddHandler cgi-script .cgi
 <Directory /var/ftp>
@@ -45,13 +45,13 @@ I wrote two versions of the CGI, one in Perl and one in Python.  I could
 probably have done it just with a shell script, but for some reason I have an
 aversion to doing anything like this in shell.  Here's the Python version:
 
-```
+```python
 #!/usr/bin/python
- 
+
 import os
- 
+
 template_html_header = """Content-Type: text/html
- 
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
 <head>
@@ -68,14 +68,14 @@ print template_html_header % (request_uri, request_uri)
 
 And here's the version in Perl:
 
-```
+```perl
 #!/usr/bin/perl
- 
+
 $path = $ENV{'REQUEST_URI'} ;
- 
+
 print <<EOF ;
 Content-Type: text/html
- 
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
 <head>
@@ -91,7 +91,7 @@ generally too lame to be useful, but in this case it does enough and is
 probably slightly faster than running a CGI script.  You'll want to make sure
 SSI is enabled and change the `HeaderName` to `/HEADER.shtml`:
 
-```
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
 <head>
