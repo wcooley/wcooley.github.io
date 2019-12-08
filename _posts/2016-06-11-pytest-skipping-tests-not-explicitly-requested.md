@@ -14,10 +14,10 @@ is to be able to run certain tests *only* if explicitly requested. The
 marker that does this, but it feels redundant with the existing `-k` keyword
 and `-m` marker facilities.
 
-### Solution (Partial)
+### Solution
 
 With a helper function and ad-hoc parsing of the marker expression, I have been able to
-create a mark permits a test to run only if the marker is requested:
+create a mark that permits a test to run only if the marker is requested:
 
 ```python
 
@@ -38,7 +38,7 @@ def marker_requested(marker, markexpr=None):
 
 def skip_unless_mark_requested(marker):
     return pytest.mark.skipif(
-            not marker_requested('foo'),
+            not marker_requested(marker),
             reason='Marker "{}" required'.format(marker)
         )
 
@@ -52,9 +52,55 @@ def test_foo_really_foo():
 
 ```
 
-What is missing, however, is automatically adding the requested marker itself
+What seems to be missing, however, is automatically adding the requested marker itself
 to the test; this has to be done in addition to the `skip_unless_...` marker,
 which seems redundant.
 
+Fortunately, Python decorators are just [syntatic sugar][2] that calls the decorator
+callable passing the decorated object as parameter, and then assigns the result to the
+original decorated object name. As such, we can easily compose decorators:
+
+```
+...
+
+def skip_unless_mark_requested(marker):
+    marker_decorator = getattr(pytest.mark, marker)
+    skipif_decorator = pytest.mark.skipif(
+        not marker_requested(marker),
+        reason='Marker "{}" required'.format(marker),
+    )
+
+    def decorator(test):
+        return marker_decorator(skipif_decorator(test))
+
+    return decorator
+
+skip_unless_foo_requested = skip_unless_mark_requested('foo')
+
+@skip_unless_foo_requested
+def test_foo_really_foo():
+    ...
+
+# Or simply:
+
+@skip_unless_mark_requested('bar')
+def test_only_if_bar_requested():
+    ...
+```
+
+We can even write a convenience singleton like `pytest.mark`:
+
+```
+class ExclusiveMarkGenerator(object):
+    def __getattr__(self, name):
+        return skip_unless_mark_requested(name)
+
+xmark = ExclusiveMarkGenerator()
+
+@xmark.baz
+def test_only_if_baz_requested():
+    ...
+```
 
 [1]: http://pytest.org/latest/example/simple.html#control-skipping-of-tests-according-to-command-line-option
+[2]: https://www.python.org/dev/peps/pep-0318/#motivation
