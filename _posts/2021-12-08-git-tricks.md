@@ -1,8 +1,8 @@
-----
+---
 tags: git
 category: git
 title: Git Tricks and Notes
-----
+---
 
 ## One-shot Pull Request / Branch Import
 
