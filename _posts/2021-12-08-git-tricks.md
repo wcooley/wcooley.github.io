@@ -37,7 +37,7 @@ remote: Counting objects: 100% (10/10), done.
 remote: Compressing objects: 100% (7/7), done.
 remote: Total 7 (delta 4), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (7/7), 8.07 KiB | 917.00 KiB/s, done.
-From ssh://git.oit.pdx.edu:7999/iam/iamportal
+From ssh://git.example.org/projects/example1
  * [new ref]               refs/pull-requests/32/from -> origin/pr/32
  * [new ref]               refs/pull-requests/40/from -> origin/pr/40
 ```
